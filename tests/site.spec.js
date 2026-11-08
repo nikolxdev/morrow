@@ -17,7 +17,7 @@ test("arrows and keyboard change the flavor", async ({ page }) => {
   await page.goto("/");
   await page.locator("#next").click();
   await expect(page.locator("#name")).toHaveText("Apricot");
-  await expect(page.locator("#count")).toContainText("02 / 05");
+  await expect(page.locator("#count")).toContainText("2 of 5");
 
   await page.locator("#cans").focus();
   await page.keyboard.press("ArrowRight");

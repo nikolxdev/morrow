@@ -9,7 +9,6 @@ const DISPLAY = '"Unbounded", "Arial Black", Impact, sans-serif';
 const MONO = '"DM Mono", ui-monospace, Menlo, Consolas, monospace';
 const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 const euro = n => new Intl.NumberFormat("en-IE", { style: "currency", currency: "EUR" }).format(n);
-const pad = n => String(n).padStart(2, "0");
 
 const FLAVORS = [
   { id: "cherry", name: "Sour Cherry", word: "CHERRY", months: [6, 7], price: 2.4,
@@ -347,7 +346,7 @@ const bgNow = new THREE.Color(FLAVORS[0].bg), bgTarget = new THREE.Color(FLAVORS
 
 function updateText(animate) {
   const f = FLAVORS[index];
-  $("#count").textContent = `${pad(index + 1)} / ${pad(FLAVORS.length)} · picked in ${MONTHS[f.months[0] - 1]}`;
+  $("#count").textContent = `${index + 1} of ${FLAVORS.length}, picked in ${MONTHS[f.months[0] - 1]}`;
   $("#prev").disabled = index === 0;
   $("#next").disabled = index === FLAVORS.length - 1;
   bgTarget.set(f.bg);
