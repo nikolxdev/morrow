@@ -5,7 +5,7 @@
   --fruit: #d0263f;
   --cream: #f6e9d6;
   --cream-70: rgba(246, 233, 214, .72);
-  --cream-45: rgba(246, 233, 214, .45);
+  --cream-58: rgba(246, 233, 214, .58);
   --cream-line: rgba(246, 233, 214, .18);
   --ink: #1d1411;
   --ink-70: rgba(29, 20, 17, .72);
@@ -106,10 +106,10 @@ img { max-width: 100%; }
   position: relative; z-index: 2; transition: opacity .35s ease;
 }
 .now p { margin: 0; }
-.now-count { font: 500 14px var(--f-body); color: var(--cream-45); font-variant-numeric: tabular-nums; }
+.now-count { font: 500 14px var(--f-body); color: var(--cream-58); font-variant-numeric: tabular-nums; }
 .now-name { margin-top: 8px !important; font: 900 clamp(1.7rem, 4vw, 2.8rem)/1.05 var(--f-display); text-transform: uppercase; letter-spacing: -.02em; }
 .now-tag { margin-top: 8px !important; color: var(--cream-70); }
-.now-tip { margin-top: 10px !important; font: 400 13px var(--f-body); color: var(--cream-45); }
+.now-tip { margin-top: 10px !important; font: 400 13px var(--f-body); color: var(--cream-58); }
 .swap { transition: opacity .22s ease, transform .22s ease; }
 .swap.out { opacity: 0; transform: translateY(6px); }
 .arrow {
@@ -202,7 +202,7 @@ img { max-width: 100%; }
 .footer { background: var(--ink); color: var(--cream); padding-block: 56px calc(32px + env(safe-area-inset-bottom, 0px)); }
 .footer-mark { margin: 0 0 40px; font: 900 clamp(3.5rem, 15vw, 12rem)/.9 var(--f-display); letter-spacing: -.03em; color: var(--cream); opacity: .95; }
 .footer-cols { display: grid; grid-template-columns: 1fr 1fr 1.6fr; gap: 32px; }
-.footer h3 { margin: 0 0 12px; font: 600 15px var(--f-body); color: var(--cream-45); }
+.footer h3 { margin: 0 0 12px; font: 600 15px var(--f-body); color: var(--cream-58); }
 .footer ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; }
 .footer a { text-decoration: none; color: var(--cream-70); }
 @media (hover: hover) and (pointer: fine) { .footer a:hover { color: var(--cream); } }
@@ -245,7 +245,8 @@ img { max-width: 100%; }
 
 @media (max-width: 860px) {
   .nav nav { display: none; }
-  .stage { height: 50svh; min-height: 320px; margin-top: 0; }
+  .stage { height: auto; min-height: 0; margin-top: 0; }
+  .stage canvas { height: 50svh; min-height: 320px; }
   .bigword { top: 42%; }
   .hero h1 { font-size: clamp(1.6rem, 7.4vw, 2.2rem); }
   .pause { top: 6px; }

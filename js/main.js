@@ -402,6 +402,7 @@ function close(focusCanvas = true) {
   hero.classList.remove("open");
   setHash();
   if (reduce) openAmt = 0;
+  if (narrow) $("#stage").scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "center" });
   if (focusCanvas) canvas.focus({ preventScroll: true });
 }
 
